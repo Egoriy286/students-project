@@ -1,0 +1,9 @@
+{
+    "apiBaseUrl": "https://reg.proste20.com",
+    "endpoints": {
+      "getUser": "/users",
+      "getPosts": "/posts",
+      "createPost": "/posts/create"
+    }
+  }
+  
