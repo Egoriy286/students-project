@@ -200,7 +200,7 @@ export default{
       console.log('Добавление пары ' + this.newLecture)
       if (this.newLecture.trim()) {
       try {
-          const response = await fetch('https://reg.proste20.ru/api/api//lectures', {
+          const response = await fetch('https://reg.proste20.ru/api/lectures', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
