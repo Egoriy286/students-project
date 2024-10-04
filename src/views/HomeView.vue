@@ -145,7 +145,7 @@ export default{
       const sortBy = 'name';
       const order = 'asc';
       try {
-        const response = await fetch(`https://reg.proste20.ru/students?sort_by=${sortBy}&order=${order}`);
+        const response = await fetch(`https://reg.proste20.ru/api/students?sort_by=${sortBy}&order=${order}`);
         if (!response.ok) throw new Error('Ошибка загрузки студентов');
         const data = await response.json();
         this.students = data;
@@ -159,7 +159,7 @@ export default{
     },
     async fetchLectures() {
       try {
-        const response = await fetch('https://reg.proste20.ru/lectures');
+        const response = await fetch('https://reg.proste20.ru/api/lectures');
         const data = await response.json();
         this.lectures = data.lectures;  // Сохраняем лекции в состоянии компонента
         if (this.lectures.length > 0) {
@@ -174,7 +174,7 @@ export default{
       console.log('Добавление студента ' + this.newStudent)
       if (this.newStudent.trim()) {
         try {
-          const response = await fetch('https://reg.proste20.ru/students', {
+          const response = await fetch('https://reg.proste20.ru/api/students', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -200,7 +200,7 @@ export default{
       console.log('Добавление пары ' + this.newLecture)
       if (this.newLecture.trim()) {
       try {
-          const response = await fetch('https://reg.proste20.ru/api//lectures', {
+          const response = await fetch('https://reg.proste20.ru/api/api//lectures', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -225,7 +225,7 @@ export default{
     },
     async removeLecture(lectureId) {
       try {
-        const response = await fetch(`https://reg.proste20.ru/lectures/${lectureId}`, {
+        const response = await fetch(`https://reg.proste20.ru/api/lectures/${lectureId}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error('Ошибка при удалении пары');
@@ -236,7 +236,7 @@ export default{
     },
     async removeStudent(studentId) {
       try {
-        const response = await fetch(`https://reg.proste20.ru/students/${studentId}`, {
+        const response = await fetch(`https://reg.proste20.ru/api/students/${studentId}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error('Ошибка при удалении студента');
@@ -258,7 +258,7 @@ export default{
     
       try {
         console.log(this.attendance)
-          const response = await fetch('https://reg.proste20.ru/attendance', {
+          const response = await fetch('https://reg.proste20.ru/api/attendance', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -347,7 +347,7 @@ export default{
     },
     async saveAttendance() {
       try {
-        const response = await fetch('https://reg.proste20.ru/api//attendance', {
+        const response = await fetch('https://reg.proste20.ru/api/attendance', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
