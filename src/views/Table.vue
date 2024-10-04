@@ -130,14 +130,14 @@ export default {
       }
     },
     async fetchAttendanceData() {
-      const response = await fetch('https://api.proste20.ru/attendance?sort_by=${sortBy}&order=${order}'); // Замените на ваш API
+      const response = await fetch('https://reg.proste20.ru/api//attendance?sort_by=${sortBy}&order=${order}'); // Замените на ваш API
       if (!response.ok) {
         throw new Error('Ошибка при загрузке посещаемости');
       }
       this.attendanceData = await response.json();
     },
     async fetchLectures() {
-      const response = await fetch('https://api.proste20.ru/lectures'); // Замените на ваш API для получения лекций
+      const response = await fetch('https://reg.proste20.ru/api//lectures'); // Замените на ваш API для получения лекций
       if (!response.ok) {
         throw new Error('Ошибка при загрузке лекций');
       }
@@ -154,7 +154,7 @@ export default {
     async removeAttendance(AttendanceId) {
       try {
         console.log('Удаление посещения с ID:', AttendanceId)
-        const response = await fetch(`https://api.proste20.ru/attendance/${AttendanceId}`, {
+        const response = await fetch(`https://reg.proste20.ru/api//attendance/${AttendanceId}`, {
           method: 'DELETE',
           mode: 'cors',
         });
