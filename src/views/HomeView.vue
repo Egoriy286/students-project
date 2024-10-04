@@ -91,7 +91,7 @@
       <tr @click="toggleAttendanceTrue(index)" @dblclick="toggleAttendanceFalse(index)">
         <th>{{ index+1 }}</th>
         <td><strong  :style="{ color: student.present ? 'green' : 'red' }">{{ student.name }}</strong></td>
-        <td><button @click="removeStudent(student.id)" class="btn btn-sm btn-error mt-2 ml-2">X</button> <!-- Кнопка удаления --></td>
+        <td><button @click="removeStudent(student.id)" class="btn btn-sm btn-error ml-2">X</button> <!-- Кнопка удаления --></td>
       </tr>
       <!-- Список студентов -->
     </tbody>
