@@ -130,7 +130,8 @@ export default {
       }
     },
     async fetchAttendanceData() {
-      const response = await fetch(`${API_BASE_URL}/attendance?sort_by=${sortBy}&order=${order}`); // Замените на ваш API
+      //?sort_by=${sortBy}&order=${order}
+      const response = await fetch(`${API_BASE_URL}/attendance`); // Замените на ваш API
       if (!response.ok) {
         throw new Error('Ошибка при загрузке посещаемости');
       }
