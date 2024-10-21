@@ -2,8 +2,8 @@
   <header>
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Главная</RouterLink>
-        <RouterLink to="/table">Таблица</RouterLink>
+        <RouterLink class="btn btn-m m-3 " to="/">Главная</RouterLink>
+        <RouterLink class="btn btn-m m-3 " to="/table">Таблица</RouterLink>
       </nav>
     </div>
   </header>
