@@ -5,9 +5,9 @@
     <div class="modal-content modal-box" :class="{'modal-yesno': yesnoForm}" @click.stop>
         <h1 class="text-lg font-bold">{{ title }}</h1>
         <p class="py-4 pb-0">{{ content }}</p>
-        <div v-if="yesnoForm" >
-            <button @click="confirmModal" class="btn btn-sm btn-outline mt-2 ml-2">Да</button>
-            <button @click="closeModal" class="btn btn-sm btn-outline mt-2 ml-2">Нет</button>
+        <div v-if="yesnoForm" style="display: flex; justify-content: space-between;" >
+            <button @click="confirmModal" class="btn btn-sm btn-outline ml-4 mt-4">Да</button>
+            <button @click="closeModal" class="btn btn-sm btn-outline mr-4 mt-4">Нет</button>
         </div>
         <div v-if="addForm">
             <input v-model="modalValue" :placeholder="placeholder"  class="input input-bordered input-info input-sm w-full max-w-xs"/>

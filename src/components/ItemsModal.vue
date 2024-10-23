@@ -73,13 +73,17 @@ export default defineComponent({
       default: false
     },
   },
-  emits: ['close','removeItem'],
+  emits: ['close','removeItem','addItem'],
   methods: {
     closeModal() {
         this.$emit("close");
     },
     removeItems() {
       this.$emit("removeItem", this.selectedItemId)
+    },
+    // New method to handle adding an item
+    addItem(newItem) {
+      this.$emit("addItem", newItem);
     },
     removeItemConfirmation(studentId : number) {
         if(this.student){
