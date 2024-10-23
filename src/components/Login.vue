@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { login } from '../services/auth';
 
 export default {
@@ -57,6 +57,7 @@ export default {
       try {
         const data = await login(this.email, this.password);
         localStorage.setItem('token', data.access_token);
+        
         this.$router.push('/table'); // Перенаправление на страницу после успешного входа
       } catch (err) {
         this.error = 'Ошибка авторизации. Проверьте свои данные.';

@@ -18,7 +18,7 @@ import Login from './components/Login.vue';
 import { RouterLink, RouterView } from 'vue-router'
 import { log } from 'console';
 // @ts-ignore
-import { logout } from './services/auth'
+import { logout as apiLogout } from './services/auth'
 
 
 const isAuthenticated = ref(false); // состояние аутентификации
@@ -39,12 +39,12 @@ const logout = async () => {
     console.error('Токен не найден');
     return;
   }
-
+  
   try {
-    // @ts-ignore
-    await logout(token); // Запрос на выход
+    await apiLogout(); // Запрос на выход
     localStorage.removeItem('token'); // Удаляем токен из localStorage
     isAuthenticated.value = false; // Обновляем состояние аутентификации
+    location.reload();
     // Перенаправление на страницу входа (если необходимо)
     // Можно использовать this.$router.push('/login'); если не используете setup
   } catch (error) {

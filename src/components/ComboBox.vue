@@ -36,7 +36,7 @@
        */
       selectedId: {
         type: Number,
-        required: true
+        required: false
       }
     },
     emits: {
